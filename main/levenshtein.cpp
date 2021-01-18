@@ -84,5 +84,5 @@ void Compara::leArquivo(string nameArq, string Frase[]){
 
     palavranova[4] = p2[4];
     cout<<palavranova<<endl;
-    cout<<"A distancia de Levinstein é: "<<dist[l2][l1];
+    cout<<"A distancia de Levenshtein é: "<<dist[l2][l1];
  }
