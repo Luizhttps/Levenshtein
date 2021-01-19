@@ -10,9 +10,9 @@ using namespace std;
 
 class Compara{
     public:
-        char palavra1[20];
-        char palavra2[20];
-        char palavranova[20];
+        char Palavra1[20];
+        char Palavra2[20];
+        char PalavraNova[20];
 
         void fraseToPalavra(string[]); 
         void leArquivo(string, string[]);
@@ -26,16 +26,16 @@ int main() {
 
     compara.leArquivo("Arquivo01.txt", frase);
     compara.fraseToPalavra(frase);
-    compara.valida(compara.palavra1, compara.palavra2);
+    compara.valida(compara.Palavra1, compara.Palavra2);
 
     return 0;
 }
 
 
 void Compara::fraseToPalavra(string frase[]){
-    strcpy(palavranova, frase[0].c_str());
-    strcpy(palavra1, frase[0].c_str());
-    strcpy(palavra2, frase[1].c_str());
+    strcpy(PalavraNova, frase[0].c_str());
+    strcpy(Palavra1, frase[0].c_str());
+    strcpy(Palavra2, frase[1].c_str());
 }
 
 void Compara::leArquivo(string nameArq, string Frase[]){
@@ -65,7 +65,7 @@ void Compara::leArquivo(string nameArq, string Frase[]){
     for(j=0;j<=l2;j++) 
         dist[j][0] = j;
 
-    cout<<palavranova<<" -> ";
+    cout<<PalavraNova<<" -> ";
     
     for (j=1;j<=l1;j++){
         for(i=1;i<=l2;i++){
@@ -77,12 +77,12 @@ void Compara::leArquivo(string nameArq, string Frase[]){
         t = MIN((dist[i-1][j]+1),(dist[i][j-1]+1));
         dist[i][j] = MIN(t,(dist[i-1][j-1]+track));
         }
-        palavranova[k] = p2[k];
+        PalavraNova[k] = p2[k];
         k++;
-        cout<<palavranova<<" -> ";
+        cout<<PalavraNova<<" -> ";
     }
 
-    palavranova[4] = p2[4];
-    cout<<palavranova<<endl;
+    PalavraNova[4] = p2[4];
+    cout<<PalavraNova<<endl;
     cout<<"A distancia de Levenshtein é: "<<dist[l2][l1];
  }
